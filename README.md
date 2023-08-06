@@ -1,38 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather App with Next.js
 
-## Getting Started
+This is a simple weather app built with Next.js, a popular React framework. The app allows users to search for the weather of a specific city and displays relevant weather information.
 
-First, run the development server:
+## Prerequisites
+
+Before running the app, make sure you have the following:
+
+- Node.js installed on your machine
+- OpenWeatherMap API key (sign up at https://openweathermap.org/ to get one)
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository_url>
+cd weather-app-nextjs
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+## Usage
+
+1. Create a `.env.local` file in the root of your project and add your OpenWeatherMap API key as `NEXT_PUBLIC_WEATHER_KEY`:
+
+```env
+NEXT_PUBLIC_WEATHER_KEY=your_api_key_here
+```
+
+2. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open your web browser and go to `http://localhost:3000` to access the app.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## How the App Works
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+1. The user can type the name of a city in the search bar and press the search button (magnifying glass icon).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. When the search button is clicked, the app makes a request to the OpenWeatherMap API to fetch the weather data for the entered city.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. While the data is being fetched, a spinner is shown to indicate loading.
 
-## Learn More
+4. Once the data is fetched successfully, it is displayed on the screen, including the temperature, weather description, and other relevant information.
 
-To learn more about Next.js, take a look at the following resources:
+5. If the data cannot be fetched or the city is not found, an error message will be displayed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The app consists of the following components:
 
-## Deploy on Vercel
+- **Weather**: This component displays the weather information for the specified city.
+- **Spinner**: This component displays a loading spinner while the weather data is being fetched.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Dependencies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The app uses the following external dependencies:
+
+- Next.js: A React framework for building server-side rendered React applications.
+- Axios: A popular library for making HTTP requests.
+- React Icons: A collection of popular icon sets for React.
+- Next/Image: A Next.js component for optimizing images.
+- Head: A Next.js component for adding metadata to the HTML head.
+
+## Attribution
+
+The background image used in the app is obtained from Unsplash (URL: https://images.unsplash.com/photo-1592210454359-9043f067919b).
+
